@@ -3,6 +3,7 @@ import sys
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from functions.get_files_info import get_files_info
 
 def main(): 
     load_dotenv()
@@ -39,5 +40,7 @@ def main():
         print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
 
 if __name__ == "__main__":
-    main()
+    print(get_files_info("calculator"))
+    
+
 
