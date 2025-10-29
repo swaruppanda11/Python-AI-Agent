@@ -4,6 +4,8 @@ import os
 #- src: file_size=128 bytes, is_dir=True
 #- package.json: file_size=1234 bytes, is_dir=False
 
+
+
 def get_files_info(working_directory, directory="None"):
     abs_working_dir = os.path.abspath(working_directory)  
     if directory is None:
@@ -20,3 +22,8 @@ def get_files_info(working_directory, directory="None"):
         size = os.path.getsize(content_path)
         final_response += f"- {content}: file_size={size} bytes, is_dir={is_dir}\n"
     return final_response
+
+
+
+    # right now, this function is not working properly
+    # nor giving the desired output
