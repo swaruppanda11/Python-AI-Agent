@@ -4,15 +4,13 @@ import os
 #- src: file_size=128 bytes, is_dir=True
 #- package.json: file_size=1234 bytes, is_dir=False
 
-
-
 def get_files_info(working_directory, directory="None"):
     abs_working_dir = os.path.abspath(working_directory)  
-    if directory is None:
+    if directory is None or directory == "None":
         directory = working_directory                   
     abs_directory = os.path.abspath(directory)
     if not abs_directory.startswith(abs_working_dir):
-        return f'Error: Cannot list "{directory}" as it is outside the permitted working directory'
+        return f'{directory} is outside the working directory {working_directory}'
 
     final_response = ""
     contents = os.listdir(abs_directory)
